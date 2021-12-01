@@ -1,8 +1,7 @@
 import React from "react";
 import { Dimensions, FlatList, Image, StyleSheet, View } from "react-native";
 
-import CarItem from "./app/components/CarItem";
-import cars from "./app/api/cars";
+import CarList from "./app/components/CarList";
 
 export default function App() {
   return (
@@ -17,15 +16,7 @@ export default function App() {
           style={styles.menu}
         />
       </View>
-      <FlatList
-        data={cars}
-        keyExtractor={({ name }) => name}
-        renderItem={({ item }) => <CarItem car={item} />}
-        snapToAlignment={"start"}
-        decelerationRate={"normal"}
-        snapToInterval={Dimensions.get("screen").height}
-        showsVerticalScrollIndicator={false}
-      />
+      <CarList />
     </View>
   );
 }
@@ -33,6 +24,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    zIndex: 0,
   },
   logoContainer: {
     paddingHorizontal: "7%",
@@ -42,7 +34,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    zIndex: 100,
+    zIndex: 1,
   },
   logo: {
     height: 13,

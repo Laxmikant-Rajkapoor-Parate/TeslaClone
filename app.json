@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TeslaClone",
-    "slug": "TeslaClone",
+    "name": "Tesla Clone",
+    "slug": "tesla-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "This apps shows the frontend view of the tesla.com website. This app has the same scrolling effect found on the TikTok app and the tesla website.\nCurrently, the functionalities aren't added. It will be added in the future.",
+    "githubUrl": "https://github.com/Laxmikant-Rajkapoor-Parate/TeslaClone.git"
   }
 }
