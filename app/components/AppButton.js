@@ -1,14 +1,15 @@
 import React from "react";
-import { StyleSheet, Text, TouchableHighlight } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import Colors from "../colors/Colors";
 
 export default function AppButton({ title, color, bgColor, onpress }) {
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       onPress={onpress}
       style={[styles.container, { backgroundColor: bgColor }]}
     >
       <Text style={[styles.text, { color: color }]}>{title}</Text>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 }
 

@@ -1,19 +1,25 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 import Colors from "../colors/Colors";
 import AppButton from "./AppButton";
 
-export default function CarItem() {
+export default function CarItem({ car }) {
+  const { name, tagline, taglineCTA, image } = car;
   return (
     <View style={styles.container}>
-      <ImageBackground
-        source={require("../../assets/ModelX.jpeg")}
-        style={styles.bgImg}
-      />
+      <ImageBackground source={image} style={styles.bgImg} />
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>Model X</Text>
-        <Text style={styles.subtitle}>Order Online for Touchless Delivery</Text>
+        <Text style={styles.title}>{name}</Text>
+        <Text style={styles.subtitle}>
+          {tagline} <Text style={styles.special}>{taglineCTA}</Text>
+        </Text>
       </View>
       <View style={styles.buttonContainer}>
         <AppButton
@@ -35,7 +41,8 @@ export default function CarItem() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: "100%",
+    height: Dimensions.get("screen").height,
     alignItems: "center",
   },
   bgImg: {
@@ -61,5 +68,8 @@ const styles = StyleSheet.create({
     marginTop: "100%",
     width: "100%",
     alignItems: "center",
+  },
+  special: {
+    textDecorationLine: "underline",
   },
 });
